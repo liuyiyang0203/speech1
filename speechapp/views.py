@@ -49,8 +49,8 @@ def Read_WAV(wav_path):
 
 
 # MP3文件和WAV文件的地址
-path = 'D://python//speech1/speech_recognition//ill'
-# path = '/home//speech//speech_recognition//ill'
+# path = 'D://python//speech1/speech_recognition//ill'
+path = '/home//speech//speech_recognition//ill'
 paths = os.listdir(path)
 wav_paths = []
 # 获取WAV文件的相对地址
@@ -82,8 +82,8 @@ print(z)
 #     DrawSpectrum(wav_data, framerate)
 
 # MP3文件和WAV文件的地址
-path = 'D://python//speech1/speech_recognition//sleepy'
-# path = '/home//speech//speech_recognition//sleepy'
+# path = 'D://python//speech1/speech_recognition//sleepy'
+path = '/home//speech//speech_recognition//sleepy'
 paths = os.listdir(path)
 wav_paths = []
 # 获取WAV文件的相对地址
@@ -112,8 +112,8 @@ print(z)
 
 
 # # MP3文件和WAV文件的地址
-path = 'D://python//speech1/speech_recognition//hungry'
-# path = '/home//speech//speech_recognition//hungry'
+# path = 'D://python//speech1/speech_recognition//hungry'
+path = '/home//speech//speech_recognition//hungry'
 paths = os.listdir(path)
 wav_paths = []
 # 获取WAV文件的相对地址
@@ -171,20 +171,20 @@ def index(request):
     try:
         if request.method == 'POST':
             file = request.FILES.get('myfile', None)
-            with open('D://python//speech1/speech_recognition//test//%s' % file.name, 'wb+') as f:
-            # with open('/home//speech//speech_recognition//test//%s' % file.name, 'wb+') as f:
+            # with open('D://python//speech1/speech_recognition//test//%s' % file.name, 'wb+') as f:
+            with open('/home//speech//speech_recognition//test//%s' % file.name, 'wb+') as f:
                 for chunk in file.chunks():
                     f.write(chunk)
             return render(request, 'speechapp/speech.html')
     except Exception as e:
-        with open('D://python//speech1//error','w') as error:
-        # with open('/home/speech/error','w') as error:
+        # with open('D://python//speech1//error','w') as error:
+        with open('/home/speech/error','w') as error:
             error.write(str(e))
         return render(request, 'speechapp/speech.html')
     try:
         if request.method == 'GET':
-            path_test = 'D://python//speech1/speech_recognition//test'
-            # path_test = '/home//speech//speech_recognition//test'
+            # path_test = 'D://python//speech1/speech_recognition//test'
+            path_test = '/home//speech//speech_recognition//test'
             paths_test = os.listdir(path_test)
             wav_paths_test = []
             for wav_path_test in paths_test:

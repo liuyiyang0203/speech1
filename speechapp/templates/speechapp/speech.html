@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>基于IPV6的智能婴语分析系统</title>
+    <!--<link rel="stylesheet" href="../../../static/speech.css" type="text/css"/>-->
+</head>
+<body>
+<form enctype="multipart/form-data" action="/speech/" method="post">
+    {% csrf_token %}
+    <br>
+{#    <input type="file"  name="myfile" style="font-size: 40px" />#}
+{#    <input type="submit" value="上传" style="font-size: 40px"/>#}
+</form>
+<form action="/speech/" method="get">
+    {% csrf_token %}
+{#    <input type="submit" value="检测" style="font-size: 40px"/>#}
+</form>
+<div  style="font-size: 40px">{{ z_predict }}</div>
+</body>
+</html>
